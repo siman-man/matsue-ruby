@@ -8,7 +8,7 @@ n.times{
   r==s&&m=[m,r].min
   if wc.delete(r)
     fl<<[s,r].min
-    wc<<s
+    wc.delete(s)
   else
     wc<<r;wc<<s
   end

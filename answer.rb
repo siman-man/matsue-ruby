@@ -1,6 +1,21 @@
 n=gets.to_i
-wc=Hash.new(0)
-n.times{s=gets.chop;wc[[s,s.reverse].min]+=1}
-f=wc.select{|k,v|v.even?}.sort.map{|e|e[0]*(e[1]/2)}.join
-m=wc.select{|k,v|v.odd?&&k==k.reverse}.keys.sort.join
-puts [f,m,f.reverse].join
+m="{"
+fl=[]
+wc=[]
+n.times{
+  s=gets.chomp;
+  r=s.reverse
+  r==s&&m=[m,r].min
+  if wc.delete(r)
+    fl<<[s,r].min
+    wc<<s
+  else
+    wc<<r;wc<<s
+  end
+}
+f=fl.sort.join
+if m=='{'
+  puts f + f.reverse
+else
+  puts f + m + f.reverse
+end

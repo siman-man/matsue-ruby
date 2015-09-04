@@ -1,9 +1,9 @@
 gets
 h={}
-$<.read.split(?\n).sort.map{|s|
+v=$<.read.split(?\n).sort.map{|s|
 r=s.reverse
 r==s&&$\||=s
-h[r]?$*<<r&&h[r]=$a:h[s]=1
+h[r]?(h[r]=$a;r):h[s]=''
 }
-f=$*.sort*''
+f=v.sort*''
 puts [f,$\,f.reverse]*''

@@ -1,21 +1,9 @@
-n=gets.to_i
-m="{"
-fl=[]
-wc=[]
-n.times{
-  s=gets.chomp;
-  r=s.reverse
-  r==s&&m=[m,r].min
-  if wc.delete(r)
-    fl<<[s,r].min
-    wc.delete(s)
-  else
-    wc<<r;wc<<s
-  end
+n=gets
+wc={}
+$stdin.read.split(?\n).sort.map{|s|
+r=s.reverse
+$\||r==s&&$\=s
+wc[r]?($*<<r;wc[r]=nil):(wc[s]=1)
 }
-f=fl.sort.join
-if m=='{'
-  puts f + f.reverse
-else
-  puts f + m + f.reverse
-end
+f=$*.sort*''
+puts [f,$\,f.reverse]*''

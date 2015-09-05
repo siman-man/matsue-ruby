@@ -4,5 +4,5 @@ m=''
 f=$<.read.split.sort.map{|s|
 r=s.reverse
 r==s&&m=s
-h.delete(r)?r:h[s]=''}.sort*''
+h.delete(s)?r:h[r]=''}.sort*''
 $><<f+m+f.reverse

@@ -1,8 +1,9 @@
 gets
-h={}
-m=''
-f=$<.read.split.sort.map{|s|
+f=m=l=''
+a=$<.read.split.sort
+a.map{|s|
 r=s.reverse
 r==s&&m=s
-h.delete(s)?r:h[r]=''}.sort*''
-$><<f+m+f.reverse
+s<r&&a.count(r)>0&&(f+=s;l=r+l)
+}
+$><<f+m+l

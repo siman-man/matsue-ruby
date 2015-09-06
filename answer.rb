@@ -1,9 +1,9 @@
 gets
 f=$<.read.split.sort
-n=m=l=''
+n=m=''
 f.map{|s|
 r=s.reverse
-s==r&&m+=s
-s<r&&f.index(r)&&(l=r+l;n+=s)
+s==r&&m=s+m
+s<r&&f.index(r)&&(n+=s;m=r+m)
 }
-$><<n+m+l
+$><<n+m

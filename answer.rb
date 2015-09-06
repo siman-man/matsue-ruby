@@ -1,6 +1,9 @@
 gets
 f=$<.read.split.sort
-$><<f.select{|s|f&[s.reverse]!=[]}.sort_by{|s|
+n=m=l=''
+f.map{|s|
 r=s.reverse
-(s<r)?-999:-f.index(r)
-}*''
+s==r&&m+=s
+s<r&&f.index(r)&&(l=r+l;n+=s)
+}
+$><<n+m+l

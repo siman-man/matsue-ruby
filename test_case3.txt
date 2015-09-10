@@ -1,5 +1,4 @@
-4
-abc
-abc
-cba
-cba
+3
+aaa
+bbb
+aaa

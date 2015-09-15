@@ -1,4 +1,4 @@
-f=$<.read;
+f=$0+$<.read;
 $><<f.split.sort.select{|s|
-f[?\n+r=s.reverse]&&(s>r||$/=r+$/;s<r)
+f[r=s.reverse]&&(s>r||$/=r+$/;s<r)
 }*''+$/

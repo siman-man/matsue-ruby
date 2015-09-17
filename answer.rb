@@ -1,4 +1,4 @@
-f=$0+$<.read;
-$><<f.split.sort.select{|s|
-f[r=s.reverse]&&(s>r||$/=r+$/;s<r)
-}*''+$/
+f=?z+$<.read;
+print *f.split.sort.select{|s|
+f[r=s.reverse]&&s<$*[0,0]=f[s]=r
+},*$*
